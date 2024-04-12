@@ -16,7 +16,7 @@ if [ ! -f "$script_path" ]; then
     exit 2
 fi
 script_content=$(<$script_path)
-encoded_script=$(echo "$script_content" | base64)
+encoded_script=$(echo "$script_content" | base64 -w 0)
 
 # Send the command to SSM
 aws ssm send-command \
