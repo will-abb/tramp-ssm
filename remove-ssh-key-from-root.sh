@@ -6,7 +6,13 @@ key_to_remove="no-port-forwarding,no-agent-forwarding,no-X11-forwarding ssh-rsa 
 # File location of the authorized_keys
 auth_keys_file="/root/.ssh/authorized_keys"
 
+# Backup current permissions
+original_perms=$(stat -c %a "$auth_keys_file")
+
 # Use 'grep' to filter out the line containing the key and overwrite the file
 grep -vF "$key_to_remove" "$auth_keys_file" > temp_keys && mv temp_keys "$auth_keys_file"
+
+# Restore original permissions
+chmod $original_perms "$auth_keys_file"
 
 echo "Specified SSH key has been removed from $auth_keys_file"
