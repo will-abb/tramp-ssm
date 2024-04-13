@@ -1,0 +1,51 @@
+{
+    "Command": {
+        "CommandId": "3712e213-b14f-4981-9935-b950046c1589",
+        "DocumentName": "AWS-RunShellScript",
+        "DocumentVersion": "$DEFAULT",
+        "Comment": "Executing a large script encoded in base64",
+        "ExpiresAfter": "2024-04-13T15:42:00.155000-05:00",
+        "Parameters": {
+            "commands": [
+                "echo 'IyEvdXNyL2Jpbi9lbnYgc2gKZWNobyAiaGVsbG8iCg==' | base64 --decode | bash"
+            ]
+        },
+        "InstanceIds": [],
+        "Targets": [
+            {
+                "Key": "instanceids",
+                "Values": [
+                    "i-02ee4a046e1318575"
+                ]
+            }
+        ],
+        "RequestedDateTime": "2024-04-13T13:42:00.155000-05:00",
+        "Status": "Pending",
+        "StatusDetails": "Pending",
+        "OutputS3Region": "us-west-2",
+        "OutputS3BucketName": "",
+        "OutputS3KeyPrefix": "",
+        "MaxConcurrency": "50",
+        "MaxErrors": "0",
+        "TargetCount": 0,
+        "CompletedCount": 0,
+        "ErrorCount": 0,
+        "DeliveryTimedOutCount": 0,
+        "ServiceRole": "",
+        "NotificationConfig": {
+            "NotificationArn": "",
+            "NotificationEvents": [],
+            "NotificationType": ""
+        },
+        "CloudWatchOutputConfig": {
+            "CloudWatchLogGroupName": "",
+            "CloudWatchOutputEnabled": false
+        },
+        "TimeoutSeconds": 3600,
+        "AlarmConfiguration": {
+            "IgnorePollAlarmFailure": false,
+            "Alarms": []
+        },
+        "TriggeredAlarms": []
+    }
+}
